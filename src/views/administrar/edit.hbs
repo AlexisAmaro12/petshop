@@ -1,0 +1,47 @@
+{{> navadmin}}
+    <div class="container">
+        <div class="col-6 offset-3">
+            <div class="row">
+                <div class="shadow-lg p-3 mb-4 mt-4 bg-body rounded border border-black">
+                    <form action="/administrar/usuarios/edit/{{usuarios.id}}" method="POST">
+                        <div class="col-xl-8 offset-xl-2">
+                            <h2 class="fw-light mb-4 mt-2">Editar Usuario</h2>
+                            <div class="mb-3">
+                                <label for="inputNombre" class="form-label" >Nombre Completo</label>
+                                <input type="text" value="{{usuarios.fullname}}" class="form-control" id="inputNombre" placeholder="Nombre Completo" name="fullname" autofocus>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input id="email" value="{{usuarios.email}}" name="email" type="email" class="form-control" placeholder="Email" name="email">
+                            </div>
+                            <div class="mb-3">
+                                <label for="inputUsername" class="form-label" >Username</label>
+                                <input type="text" value="{{usuarios.username}}" class="form-control" id="inputUsername" placeholder="Username" name="username">
+                            </div>
+                            <div class="mb-3">
+                                <label for="rol" class="form-label">Elegir Rol</label>
+                                <select class="form-select" aria-label="Default select example" name="rol">
+                                    <option selected>{{usuarios.rol}}</option>
+                                    <option value="administrador">Administrador</option>
+                                    <option value="user">Usuario</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="estado" class="form-label">Estado del usuario</label>
+                                <select class="form-select" aria-label="Default select example" name="estado">
+                                    <option selected>{{usuarios.estado}}</option>
+                                    <option value="Activo">Activar</option>
+                                    <option value="Inactivo">Desactivar</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="inputPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password">
+                            </div>
+                        </div>
+                        <div class="text-center mt-4 mb-2"><button type="submit" class="btn btn-success">Guardar</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

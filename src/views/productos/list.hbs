@@ -1,0 +1,32 @@
+{{> navigation}}
+
+<div class="contaier p-4">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            {{#if categoria}}
+                <li class="breadcrumb-item active" aria-current="page">{{categoria}}</li>
+            {{else}}
+                <li class="breadcrumb-item active" aria-current="page">Productos</li>
+            {{/if}}
+        </ol>
+    </nav>
+    
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-3 mt-2">
+        {{#each productos}} 
+        <div class="col">
+            <div class="card shadow-sm">
+                <img src="img/{{image}}" class="card-img-top" alt="..." height="300px">
+                <div class="card-body text-center">
+                    <h5 class="card-title">{{nombre}}</h5>
+                    <p class="card-text">{{descripcion}}</p>
+                    <p class="card-text text-center text-info fw-semibold">${{precio}}</p>
+                    <p class="card-text text-center text-warning fw-semibold">Disponibles: {{cantidad}}</p>
+                    <a href="/carrito/add/{{id}}" class="btn btn-success">Agregar al Carrito</a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+{{> footer}}

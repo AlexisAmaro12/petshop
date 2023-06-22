@@ -1,0 +1,72 @@
+{{> navigation}}
+
+<div class="container">
+        <h2 class="text-center mt-3">Proceder con la compra (2 articulos)</h2>
+        <div class="col-8 offset-2">
+            <div class="row">
+                <div class="shadow-lg p-3 mb-4 mt-4 bg-body rounded border border-black">
+                    <form action="/pago" method="POST">
+                        <div class="col-md-10 offset-md-1">
+                            <h3 class="fw-light mb-4 mt-2">1. Seleccionar tienda donde recoger el producto.</h3>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="flexCheckChecked" checked disabled>
+                                <label class="form-check-label" for="flexCheckChecked">
+                                    Av. Universidad Nacional S/N, Bosques de Aragon, 57171 Nezahualcóyotl, Méx. Numero de telefono: 1234567890
+                                </label>
+                            </div>
+                            <hr>
+                            <h3 class="fw-light mb-4 mt-2">2. Elegir metodo de pago.</h3>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="pago" id="flexRadioDefault1" value="efectivo" checked>
+                                <label class="form-check-label" for="flexRadioDefault1">
+                                    Pago en efectivo en tienda.
+                                </label>
+                            </div>
+                            <div class="form-check mt-2">
+                                <input class="form-check-input" type="radio" name="pago" id="flexRadioDefault2" value="deposito">
+                                <label class="form-check-label" for="flexRadioDefault2">
+                                    Pago por deposito bancario o transferencia. (Se debera seguir las instrucciones enviadas al correo).
+                                </label>
+                            </div>
+                            <hr>
+                            <h3 class="fw-light mb-4 mt-2">3. Revisar los articulos.</h3>
+                            <div class="d-flex text-warning rounded border border-warning">
+                                <i class="bi bi-exclamation-triangle icono-warning ms-3"></i>
+                                <p>Debes pagar y recoger tus productos dentro de las proximas 72 horas o se cancelárá tu pedido</p>
+                            </div>
+                        </div>
+                        {{#each carrito}}
+                        <div class="col mt-4">
+                            <div class="row justify-content-between">
+                                <div class="col-md-3">
+                                    <img src="img/{{image}}" class="card-img-top" alt="..." >
+                                </div>
+                                <div class="col-md-6">
+                                    <p class="fs-5 fst-italic">{{this.nombre}}</p>
+                                    <p class="fs-5 fst-italic">{{this.descripcion}}</p>
+                                    <p class="fs-5 fst-italic">Precio Unitario:<p class="fs-5 fst-italic text-info">${{this.precio}}</p></p>
+                                    <select class="form-select" aria-label="Default select example" disabled>
+                                        <option selected value="{{this.cantidad}}">{{this.cantidad}}</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <p class="fs-5 fst-italic text-info">${{this.suma}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        {{/each}}
+                        <div class="col d-flex align-content-center">
+                            <button type="submit" class="btn btn-warning">Finalizar Compra</button>
+                            <input id="prodId" name="total" type="hidden" value="{{total}}">
+                            <p class="text-danger fs-4 fst-italic ms-4">Total ${{total}}</p>
+                        </div>
+                        <p class="fst-italic text-center mt-2">Al realizar tu compra, aceptas el aviso de privacidad y las condiciones de uso de Petshop.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="py-3" style="background-color: #C7E8CA;">
+        <p class="text-center fst-italic fs-5">Aviso de privacidad | © 2023, PetShop. Todos los Derechos Reservados.</p>
+    </footer>

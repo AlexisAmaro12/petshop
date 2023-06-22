@@ -1,0 +1,60 @@
+{{> navigation}}
+    <div class="container-fluid">
+        <div class="row mt-4">
+            <div class="col-7 col-md-9">
+                <div class="shadow-lg p-2 mb-4 mt-4 bg-body rounded border border-black">
+                    <div class="col-md-10 offset-md-1 d-flex mt-2">
+                        <h2 class="fw-light">Carrito</h2>
+                    </div>
+                    <hr>
+                    {{#each carrito}}
+                    <div class="col ">
+                        <div class="row justify-content-between">
+                            <div class="col-md-3">
+                                <img src="img/{{image}}" class="card-img-top" alt="..." >
+                            </div>
+                            <div class="col-md-6">
+                                <p class="fs-5 fst-italic">{{this.nombre}}</p>
+                                <p class="fs-5 fst-italic">{{this.descripcion}}</p>
+                                <p class="fs-5 fst-italic">Precio Unitario</p>
+                                <p class="fs-5 fst-italic text-info">${{this.precio}}</p>
+                                <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                    <a class="btn btn-warning" href="/carrito/quitar/{{this.id}}"><i class="bi bi-dash"></i></a>
+                                    <button type="button" class="btn btn-primary" disabled>{{this.cantidad}}</button>
+                                    <a class="btn btn-success" href="/carrito/agregar/{{this.id}}"><i class="bi bi-plus"></i></i></a>
+                                </div>
+                                <div class="mt-2"><a class="text-danger sin-subrayado" href="/carrito/eliminar/{{this.id}}">Eliminar</a></div>  
+                            </div>
+                            <div class="col-md-2">
+                                <p class="fs-5 fst-italic text-info">${{this.suma}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    {{else}}
+                    <div class="col-md-4 mx-auto">
+                        <div class="card card-body text-center">
+                            <p>No tienes ningun producto en tu carrito aun</p>
+                            <a href="/productos">Agrega uno!</a>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            <div class="col-5 col-md-3">
+                <div class="shadow-lg p-2 mb-4 mt-4 bg-body rounded border border-black">
+                    <h3 class="fw-light mt-1">Subtotal</h3>
+                    <hr>
+                    {{#each carrito}}
+                    <h4 class="fw-light mt-1">${{suma}}</h4>
+                    {{/each}}
+                    <hr>
+                    <h3 class="fw-light mt-1">${{total}}</h3>
+                    <div class="text-center mt-2"><a href="/pago" class="btn btn-success text-center">Pagar</a></div>
+                </div>
+            </div>
+        </div>
+        <p class="text-center fst-italic">El precio y la disponibilidad de los productos de Petshop.com.mx están sujetos a cambio. En el carrito de compras puedes dejar temporalmente los productos que quieras. Aparecerá el precio más reciente de cada producto.</p>
+    </div>
+
+    {{> footer}}

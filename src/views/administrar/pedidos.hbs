@@ -1,0 +1,41 @@
+{{> navadmin}}
+{{> message}}
+
+<div class="container">
+    <div class="row">
+        <div class="col-6"><h1>Pedidos</h1></div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-bordered mt-4">
+            <thead class="thead-dark">
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">User</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Costo total</th>
+                <th scope="col">Metodo de pago</th>
+                <th scope="col">Pago</th>
+                <th scope="col">Entrega</th>
+                <th scope="col text-end">Detalle</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each pedidos}}
+                <tr>
+                <td scope="row">{{this.id}}</td>
+                <td>{{this.username}}</td>
+                <td>{{this.fullname}}</td>
+                <td>${{this.costo}}</td>
+                <td>{{this.met_pago}}</td>
+                <td>{{this.pago}}</td>
+                <td>{{this.entrega}}</td>
+                <td class="text-end">
+                    <a href="/administrar/pedidos/edit/{{this.id}}" type="button" class="btn btn-warning btn-small"><i class="bi bi-pencil"></i>Edit</a>
+                    <a href="/administrar/pedidos/{{this.id}}" type="button" class="btn btn-success btn-small "><i class="bi bi-eye"></i>Detalles</a>
+                </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>

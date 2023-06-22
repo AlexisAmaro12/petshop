@@ -1,0 +1,43 @@
+{{> navigation}}
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h1>Bienvenido {{user.fullname}}</h3>
+                    <h4>Tus pedidos actuales son:</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-bordered mt-4">
+            <thead class="thead-dark">
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Costo total</th>
+                <th scope="col">Metodo de pago</th>
+                <th scope="col">Pago</th>
+                <th scope="col">Entrega</th>
+                <th scope="col text-end">Detalle</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each pedidos}}
+                <tr>
+                <td scope="row">{{this.id}}</td>
+                <td>${{this.costo}}</td>
+                <td>{{this.met_pago}}</td>
+                <td>{{this.pago}}</td>
+                <td>{{this.entrega}}</td>
+                <td class="text-center">
+                    <a href="/pedido/{{this.id}}" type="button" class="btn btn-warning btn-small "><i class="bi bi-eye"></i>Detalles</a>
+                </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{{> footer}}

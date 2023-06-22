@@ -1,0 +1,34 @@
+{{> navigation}}
+{{> message}}
+<p class="h1 text-center mt-3 fw-light" href="#">
+        <img  src="img/logo.jpg" alt="Logo" width="80" height="80"class="d-inline-block align-text-center">
+        PetShop</p>
+
+    <div class="container">
+        <div class="col-6 offset-3">
+            <div class="row">
+                <div class="shadow-lg p-3 mb-2 mt-2 bg-body rounded border border-black">
+                    <form action="/signin" method="POST">
+                        <div class="col-md-8 offset-md-2">
+                            <h1 class="fw-light mb-4 mt-5">Iniciar Sesion</h1>
+                            <label for="username" class="form-label">Username</label>
+                            <input id="username" name="username" type="text" class="form-control" name="username" placeholder="Username" autofocus>
+                        </div>
+                        <div class="col-md-8 offset-md-2 mt-4">
+                            <label for="password" class="form-label">Contraseña</label>
+                            <input id="password" name="password" type="password" class="form-control" placeholder="Password">
+                        </div>
+                        <div class="text-center mt-4 mb-5"><button type="submit" class="btn btn-success">Iniciar Sesion</button></div>
+                    </form>
+                </div>
+            </div>
+            <div class="text-center">
+            <p class="fw-semibold" >¿No tienes cuenta aun?</p>
+            <a href="/signup" class="btn btn-info mb-4">Crea tu cuenta de Petshop</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-3" style="background-color: #C7E8CA;">
+        <p class="text-center fst-italic fs-5">Aviso de privacidad | © 2023, PetShop. Todos los Derechos Reservados.</p>
+    </footer>

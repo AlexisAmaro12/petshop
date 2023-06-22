@@ -1,0 +1,59 @@
+{{> navadmin}}
+    <div class="container">
+        <div class="col-6 offset-3">
+            <div class="row">
+                <div class="shadow-lg p-3 mb-5 mt-4 bg-body rounded border border-black">
+                    <form action="/productos/add" method="POST" enctype="multipart/form-data">
+                        <div class="col-xl-8 offset-xl-2">
+                            <h2 class="fw-light mb-4 mt-2">Agregar Producto</h2>
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Nombre del producto:</label>
+                                <input id="nombre" name="nombre" type="text" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="cantidad" class="form-label">Cantidad del producto:</label>
+                                <input id="cantidad" name="cantidad" type="number" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="precio" class="form-label">Precio del producto:</label>
+                                <input id="precio" name="precio" type="number" class="form-control">
+                            </div>
+                            <div class="mb-3">
+                                <label for="rol" class="form-label">Seleccionar Categoria del Producto:</label>
+                                <select class="form-select" aria-label="Default select example" name="categoria">
+                                    <option selected>Seleccionar categoria</option>
+                                    <option value="Perros">Perros</option>
+                                    <option value="Gatos">Gatos</option>
+                                    <option value="Aves">Aves</option>
+                                    <option value="Acuaticos">Acuaticos</option>
+                                    <option value="Reptiles">Reptiles y Anfibios</option>
+                                    <option value="Ruedores">Ruedores</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="inicio" class="form-label">¿Desea que aparezca en el inicio este producto?</label>
+                                <select class="form-select" aria-label="Default select example" name="inicio">
+                                    <option selected>Seleccionar</option>
+                                    <option value="No">No</option>
+                                    <option value="Si">Si</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlTextarea1" class="form-label">Descripcion del Producto:</label>
+                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="descripcion"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="file" class="form-label">Seleccione la imagen del producto</label>
+                                <input class="form-control" type="file" id="file" name="file">
+                            </div>
+                        </div>
+                        <div class="text-center mt-5 mb-2"><button type="submit" class="btn btn-success">Agregar Producto</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-3" style="background-color: #C7E8CA;">
+        <p class="text-center fst-italic fs-5">Aviso de privacidad | © 2023, PetShop. Todos los Derechos Reservados.</p>
+    </footer>

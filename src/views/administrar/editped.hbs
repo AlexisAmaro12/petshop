@@ -1,0 +1,43 @@
+{{> navadmin}}
+    <div class="container">
+        <div class="col-6 offset-3">
+            <div class="row">
+                <div class="shadow-lg p-3 mb-4 mt-4 bg-body rounded border border-black">
+                    <form action="/administrar/pedidos/edit/{{pedidos.id}}" method="POST">
+                        <div class="col-xl-8 offset-xl-2">
+                            <h2 class="fw-light mb-4 mt-2">Editar Pedido</h2>
+                            <div class="mb-3">
+                                <label for="inputId" class="form-label" >Id pedido</label>
+                                <input type="text" value="{{pedidos.id}}" class="form-control" id="inputId" disabled>
+                            </div>
+                            <div class="mb-3">
+                                <label for="pago" class="form-label">Metodo de pago</label>
+                                <input id="pago" value="{{pedidos.met_pago}}" type="text" class="form-control" disabled>
+                            </div>
+                            <div class="mb-3">
+                                <label for="inputCosto" class="form-label" >Pago Total</label>
+                                <input type="number" value="{{pedidos.costo}}" class="form-control" id="inputCosto" disabled>
+                            </div>
+                            <div class="mb-3">
+                                <label for="rol" class="form-label">Estado del pago</label>
+                                <select class="form-select" aria-label="Default select example" name="pago">
+                                    <option selected>{{pedidos.pago}}</option>
+                                    <option value="pendiente">Pendiente</option>
+                                    <option value="pagado">Pagado</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="estado" class="form-label">Estado de la entrega</label>
+                                <select class="form-select" aria-label="Default select example" name="entrega">
+                                    <option selected>{{pedidos.entrega}}</option>
+                                    <option value="pendiente">Pendiente</option>
+                                    <option value="entregado">Entregado</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="text-center mt-4 mb-2"><button type="submit" class="btn btn-success">Guardar</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>

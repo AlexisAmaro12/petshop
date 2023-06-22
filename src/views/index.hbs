@@ -1,0 +1,93 @@
+{{> navigation}}
+    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img/comida0.avif" class="d-block w-100" alt="..."  height="450">
+          </div>
+          <div class="carousel-item">
+            <img src="img/comida2.jpg" class="d-block w-100" alt="..."  height="450">
+          </div>
+          <div class="carousel-item">
+            <img src="img/comida1.webp" class="d-block w-100" alt="..."  height="450">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-3 mt-2">
+        {{#each productos}} 
+        <div class="col">
+            <div class="card shadow-sm">
+                <img src="img/{{image}}" class="card-img-top" alt="..." height="300px">
+                <div class="card-body text-center">
+                    <h5 class="card-title">{{nombre}}</h5>
+                    <p class="card-text">{{descripcion}}</p>
+                    <p class="card-text text-center text-info fw-semibold">${{precio}}</p>
+                    <p class="card-text text-center text-warning fw-semibold">Disponibles: {{cantidad}}</p>
+                    <a href="/carrito/add/{{id}}" class="btn btn-success">Agregar al Carrito</a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+        </div>
+    </div>
+
+    <div class="container text-center">
+        
+        <h2 class="text-center mt-4" id="categorias">Nuestras Categorias</h2>
+        <hr>
+        <div class="row align-items-center justify-content-center mt-5">
+            <div class="col">
+                <div class="btn btn-outline-secondary text-center">
+                    <a href="/Perros"><img class="" src="img/perrros.jpg" alt="" width="180" height="180"></a>
+                    <p class="text-center h5">Perros</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="btn btn-outline-secondary">
+                    <a href="/Gatos"><img class="" src="img/gatos.jpg" alt="" width="180" height="180"></a>
+                    <p class="text-center h5">Gatos</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="btn btn-outline-secondary">
+                    <a href="/Aves"><img class="" src="img/aves.webp" alt="" width="180" height="180"></a>
+                    <p class="text-center h5">Aves</p>
+                </div>
+            </div>
+        </div>
+        <div class="row row align-items-center justify-content-center mt-4">
+            <div class="col">
+                <div class="btn btn-outline-secondary">
+                    <a href="/Acuaticos"><img class="" src="img/peces.jpg" alt="" width="180" height="180"></a>
+                    <p class="text-center h5">Acuaticos</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="btn btn-outline-secondary">
+                    <a href="/Reptiles"><img class="" src="img/reptiles.jpg" alt="" width="180" height="180"></a>
+                    <p class="text-center h5">Reptiles y Anfibios</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="btn btn-outline-secondary">
+                    <a href="/Ruedores"><img class="" src="img/ruedore.jpg" alt="" width="180" height="180"></a>
+                    <p class="text-center h5">Ruedores</p>
+                </div>
+            </div>
+        </div>
+        
+        <h2 class="text-center mt-4 mb-4" id="categorias">Encuentranos Aqui</h2>
+        <hr>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3761.554827776176!2d-99.04571702560791!3d19.47475123933497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fb1ae7b9f1c7%3A0x501a154bf16c02f1!2sFacultad%20de%20Estudios%20Superiores%20Arag%C3%B3n%20UNAM!5e0!3m2!1ses-419!2smx!4v1683502504532!5m2!1ses-419!2smx" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <img src="img/fondo.jpg" class="d-block w-100" alt="...">
+{{> footer}}

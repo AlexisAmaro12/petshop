@@ -1,0 +1,20 @@
+.icono-nav {
+    font-size: 25px;
+    margin-right: 8px;
+    color: black;
+}
+
+.sin-subrayado {
+    text-decoration: none;
+}
+
+.icono-footer {
+    font-size: 50px;
+    margin-right: 10px;
+    color: black;
+}
+
+.icono-warning{
+    font-size: 30px;
+    margin-right: 10px;
+}
